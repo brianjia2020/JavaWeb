@@ -1,0 +1,12 @@
+div {
+    border : 1px solid red;
+    color : blue;
+    font-size: 20px;
+}
+
+span {
+    border : 1px dashed red;
+    color  : brown;
+    font-size: 30px;
+
+}
