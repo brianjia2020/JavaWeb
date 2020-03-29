@@ -5,16 +5,44 @@
     <title>Form</title>
 </head>
 <body>
-        <form>
-            user_name: <input type="text" value="default value"><br/>
-            password: <input type="password"><br/>
-            sex <input type="radio" name="sex">male <input type="radio" name="sex">female <br/>
-            hobby <input type="checkbox" checked="checked">Java <input type="checkbox">Javascript <input type="checkbox">python<br>
-            nationality <select>
+        <form action="" method="post">
+            <table align="center" border="1">
+                <tr>
+                    <td>user_name</td>
+                    <td><input type="text" value="default value" name="username"></td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td>sex</td>
+                    <td><input type="radio" name="sex">male
+                        <input type="radio" name="sex">female
+                    </td>
+                </tr>
+                <tr>
+                    <td>hobby</td>
+                    <td><input type="checkbox" checked="checked" name="hobby">Java
+                        <input type="checkbox" name="hobby">Javascript
+                        <input type="checkbox" name="hobby">python
+                    </td>
+                </tr>
+                <tr>
+                    <td>nationality</td>
+                    <td><select name="nationality">
                         <option selected="selected">Canadian</option>
                         <option>Chinese</option>
                         <option>American</option>
                         </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="reset"></td>
+                    <td><input type="submit"></td>
+                </tr>
+
+            </table>
         </form>
 </body>
 </html>
