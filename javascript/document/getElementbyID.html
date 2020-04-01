@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //demand when user clicks the check button,
+        //1. get the input text
+        //2. check if it is legal or not
+        function onclickFun() {
+            let obj = document.getElementById("username");
+            //alert(obj.value);
+            let usernametext = obj.value;
+            let patt = /^\w{5,12}$/;
+            if(patt.test(usernametext)){
+                alert("it's legal.")
+            } else {
+                alert("it's illegal.")
+            }
+
+        }
+    </script>
+</head>
+<body>
+<label>
+    username: <input type="text" id="username">
+</label>
+    <button onclick="onclickFun();">check</button>
+</body>
+</html>
