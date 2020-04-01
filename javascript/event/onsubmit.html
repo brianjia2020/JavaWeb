@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo for onsubmit</title>
+    <script type="text/javascript">
+        function onsubmitcheck(){
+
+            alert("Registering the onsubmit function.");
+            return false;
+        }
+
+        window.onload = function(){
+            var obj = document.getElementById("test01");
+            obj.onsubmit = function(){
+                alert("it's illegal");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="http://localhost:8080" method="get" onsubmit="return onsubmitcheck();">
+        <input type="submit" value="register">
+    </form>
+    <br>
+    <form action="http://localhost:8080" method="get" id="test01">
+        <input type="submit" value="register">
+    </form>
+</body>
+</html>

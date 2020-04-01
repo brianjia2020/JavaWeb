@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo for onchange</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var select = document.getElementById("select");
+            select.onchange = function () {
+                console.log("This is used to load the onchange event.")
+            }
+        }
+    </script>
+</head>
+<body>
+    <select id="select">
+        <option>canada</option>
+        <option>china</option>
+        <option>america</option>
+    </select>
+
+</body>
+</html>

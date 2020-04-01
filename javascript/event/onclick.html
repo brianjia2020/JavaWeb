@@ -2,10 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Demo for onlick</title>
+    <title>Demo for onclick</title>
+    <script type="text/javascript">
+        function onclickFunc() {
+            alert("registering onclick function")
+        }
+
+        //dynamically register the onclick event
+        window.onload = function () {
+            //get the object
+            var btn = document.getElementById("btn01");
+            //
+            btn.onclick = function () {
+                alert("dynamically registering onclick event")
+            }
+        }
+    </script>
 </head>
 <body>
-    <button>button 1</button>
-    <button>button 2</button>
+    <button onclick="onclickFunc();">button 1</button>
+    <button id="btn01">button 2</button>
 </body>
 </html>
