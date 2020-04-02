@@ -9,13 +9,15 @@
         //2. check if it is legal or not
         function onclickFun() {
             let obj = document.getElementById("username");
+            let obj_hightlight = document.getElementById("username_highlight");
+
             //alert(obj.value);
             let usernametext = obj.value;
             let patt = /^\w{5,12}$/;
             if(patt.test(usernametext)){
-                alert("it's legal.")
+                obj_hightlight.innerHTML = "Nice, it's looking good.";
             } else {
-                alert("it's illegal.")
+                obj_hightlight.innerHTML = "Ahh, it's illegal";
             }
 
         }
@@ -24,6 +26,7 @@
 <body>
 <label>
     username: <input type="text" id="username">
+    <span style="color:red;" id="username_highlight"></span>
 </label>
     <button onclick="onclickFun();">check</button>
 </body>

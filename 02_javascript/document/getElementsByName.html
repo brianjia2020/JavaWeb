@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function checkAll() {
+            //let all the checkbox clicked
+            let hobby = document.getElementsByName("hobby");
+            for (let i = 0; i < hobby.length; i++){
+                hobby[i].checked = true;
+            }
+        }
+
+        function checkNo() {
+            let hobby = document.getElementsByName("hobby");
+            for (let i = 0; i < hobby.length; i++){
+                hobby[i].checked = false;
+            }
+        }
+
+        function checkReverse() {
+            let hobby = document.getElementsByName("hobby");
+            for (let i = 0; i < hobby.length; i++){
+                hobby[i].checked = hobby[i].checked === false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    hobby:
+    <label>
+        <input type="checkbox" name="hobby" value="cpp">
+    </label>C++
+    <label>
+        <input type="checkbox" name="hobby" value="java">
+    </label>Java
+    <label>
+        <input type="checkbox" name="hobby" value="js">
+    </label>Javascript
+    <br>
+    <button onclick="checkAll();">all chosen</button>
+    <button onclick="checkNo();">all unselect</button>
+    <button onclick="checkReverse();">all reverse select</button>
+</body>
+</html>
