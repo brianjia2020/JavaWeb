@@ -9,6 +9,16 @@
 	$(function(){
 		//testDiv.css("color","red")
 		//testDiv.style.color = "blue";
+		// var btnObj = $("button");
+		//
+		// for (let i = 0; i < btnObj.length;i++){
+		// 	alert(btnObj[i]);
+		// }
+
+		document.getElementById("testDiv").innerHTML = "I got you";
+		//for jQuery, we cannot use the innerHTML
+		$("#testDiv")[0].innerHTML="I got you too";
+
 
 	});
 
