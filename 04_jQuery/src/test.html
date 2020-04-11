@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./Demo/script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            alert($("div").html());//get the content
+            let v1 = $("div").html("<h1>I am the h1 inside span</h1>");
+            
+        })
+    </script>
+</head>
+<body>
+    <div>我是div 标签<span>i am the span inside span </span></div>
+</body>
+</html>

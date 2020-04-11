@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/01_html_css/01_html_css.iml" filepath="$PROJECT_DIR$/01_html_css/01_html_css.iml" />
       <module fileurl="file://$PROJECT_DIR$/02_javascript/02_javascript.iml" filepath="$PROJECT_DIR$/02_javascript/02_javascript.iml" />
       <module fileurl="file://$PROJECT_DIR$/03_JQuery/03_JQuery.iml" filepath="$PROJECT_DIR$/03_JQuery/03_JQuery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_jQuery/04_jQuery.iml" filepath="$PROJECT_DIR$/04_jQuery/04_jQuery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_book_static/05_book_static.iml" filepath="$PROJECT_DIR$/05_book_static/05_book_static.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaWeb.iml" filepath="$PROJECT_DIR$/JavaWeb.iml" />
     </modules>
   </component>
