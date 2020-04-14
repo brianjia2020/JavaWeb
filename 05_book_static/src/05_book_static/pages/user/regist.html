@@ -40,7 +40,7 @@
 					//1 获取确认密码内容
 					var repwdText = $("#repwd").val();
 					//2 和密码相比较
-					if (repwdText != passwordText) {
+					if (repwdText !== passwordText) {
 						//3 提示用户
 						$("span.errorMsg").text("确认密码和密码不一致！");
 
