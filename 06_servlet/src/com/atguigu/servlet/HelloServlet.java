@@ -21,7 +21,12 @@ public class HelloServlet implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         System.out.println("2. method to initiate");
-
+        //1.to get the alias of the servlet config
+        System.out.println("Hello, the alias of this servlet program is " + servletConfig.getServletName());
+        //2. get init params
+        System.out.println("the initiation parameters are" + servletConfig.getInitParameter("username"));
+        //3, get servlet context class
+        System.out.println(servletConfig.getServletContext());
     }
 
     @Override
