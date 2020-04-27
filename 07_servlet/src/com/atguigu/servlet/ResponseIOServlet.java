@@ -5,11 +5,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-public class ForwardC extends HttpServlet {
+public class ResponseIOServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("request passed on to /a/b/c.html");
-        req.getRequestDispatcher("/a/b/c.html").forward(req,resp);
+        System.out.println(resp.getCharacterEncoding());
+        resp.setCharacterEncoding("UTF-8");
+        resp.setHeader("Content-Type","text/html;charset=UTF-8");
+        PrintWriter writer =  resp.getWriter();
+        writer.println("response's content.");
     }
 }
