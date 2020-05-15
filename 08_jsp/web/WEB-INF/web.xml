@@ -13,4 +13,15 @@
         <servlet-name>PringHtml</servlet-name>
         <url-pattern>/pringHtml</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchStudentServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.SearchStudentServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SearchStudentServlet</servlet-name>
+        <url-pattern>/searchStudentServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>
