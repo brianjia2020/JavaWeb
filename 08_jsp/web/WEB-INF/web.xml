@@ -23,5 +23,8 @@
         <servlet-name>SearchStudentServlet</servlet-name>
         <url-pattern>/searchStudentServlet</url-pattern>
     </servlet-mapping>
-
+    
+    <listener>
+        <listener-class>com.atguigu.listener.MyServletContextListenerImpl</listener-class>
+    </listener>
 </web-app>
