@@ -27,14 +27,18 @@ public class RegisterServlet extends HttpServlet {
         if("abcde".equalsIgnoreCase(code)){
             if (userService.existUsername(username)){
                 System.out.println("This username exists: " + username);
-                req.getRequestDispatcher("/pages/user/regist.html").forward(req, resp);
+
+                req.setAttribute("msg","username or passsword is wrong");
+                req.setAttribute("username",username);
+
+                req.getRequestDispatcher("/pages/user/regist.jsp").forward(req, resp);
             } else {
                 userService.RegisterUser(new User(null,username,password,email));
-                req.getRequestDispatcher("/pages/user/regist_success.html").forward(req, resp);
+                req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req, resp);
             }
         } else {
             System.out.println("The security is wrong: " + code);
-            req.getRequestDispatcher("/pages/user/regist.html").forward(req, resp);
+            req.getRequestDispatcher("/pages/user/regist.jsp").forward(req, resp);
         }
 
 
