@@ -26,6 +26,10 @@ public class RegisterServlet extends HttpServlet {
         //2. check the security code
         if("abcde".equalsIgnoreCase(code)){
             if (userService.existUsername(username)){
+                req.setAttribute("msg","username already exists");
+                req.setAttribute("username",username);
+                req.setAttribute("email",email);
+
                 System.out.println("This username exists: " + username);
 
                 req.setAttribute("msg","username or passsword is wrong");
@@ -37,6 +41,10 @@ public class RegisterServlet extends HttpServlet {
                 req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req, resp);
             }
         } else {
+            req.setAttribute("msg","code is wrong.");
+            req.setAttribute("username",username);
+            req.setAttribute("email",email);
+
             System.out.println("The security is wrong: " + code);
             req.getRequestDispatcher("/pages/user/regist.jsp").forward(req, resp);
         }
