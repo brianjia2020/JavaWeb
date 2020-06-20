@@ -9,8 +9,9 @@
 <%
     String base_path = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
                         +request.getContextPath() + "/";
+    pageContext.setAttribute("basePath",base_path);
 %>
-<%=base_path%>
+<%--<%=base_path%>--%>
 <base href=<%=base_path%>>
 <link type="text/css" rel="stylesheet" href="static/css/style.css" >
 <script type="text/javascript" src="static/script/jquery-1.7.2.js"></script>

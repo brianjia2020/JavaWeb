@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 public class WebUtils {
+
     public static <T>T copyParamToBean(Map value, T bean){
         try{
             BeanUtils.populate(bean,value);
@@ -15,6 +16,15 @@ public class WebUtils {
             System.out.println(e);
         }
         return bean;
+    }
+
+    public static int parseInt(String strInt, int defaultValue){
+        try {
+            return Integer.parseInt(strInt);
+        } catch (Exception e) {
+//            System.out.println("default to first page");
+        }
+        return defaultValue;
     }
 
 }
