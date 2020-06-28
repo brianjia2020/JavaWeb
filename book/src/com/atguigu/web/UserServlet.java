@@ -14,8 +14,11 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import static com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY;
+
 public class UserServlet extends BaseServlet {
     private UserService userService = new UserServiceImpl();
+
     protected void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
         //System.out.println(action);
@@ -26,12 +29,13 @@ public class UserServlet extends BaseServlet {
             User loginUser = userService.login(new User(null, username, password, null));
 
             if (loginUser == null) {
-                System.out.println("Username or password are wrong. Log in failed");
+//                System.out.println("Username or password are wrong. Log in failed");
                 req.setAttribute("msg", "Username or password are wrong. Log in failed");
                 req.setAttribute("username", username);
                 req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
             } else {
-                System.out.println("Log in Successfully.");
+                req.getSession().setAttribute("user",loginUser);
+//                System.out.println("Log in Successfully.");
                 req.getRequestDispatcher("/pages/user/login_success.jsp").forward(req, resp);
             }
         }
@@ -45,7 +49,11 @@ public class UserServlet extends BaseServlet {
         String email = req.getParameter("email");
         User user = WebUtils.copyParamToBean(req.getParameterMap(),new User());
         //2. check the security code
-        if ("abcde".equalsIgnoreCase(code)) {
+
+        String token = (String) req.getSession().getAttribute(KAPTCHA_SESSION_KEY);
+        req.getSession().removeAttribute(KAPTCHA_SESSION_KEY);
+
+        if (token != null && token.equalsIgnoreCase(code)) {
             if (userService.existUsername(username)) {
                 req.setAttribute("msg", "username already exists");
                 req.setAttribute("username", username);
@@ -71,4 +79,8 @@ public class UserServlet extends BaseServlet {
         }
     }
 
+    protected void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException,IOException{
+        req.getSession().invalidate();
+        resp.sendRedirect(req.getContextPath());
+    }
 }

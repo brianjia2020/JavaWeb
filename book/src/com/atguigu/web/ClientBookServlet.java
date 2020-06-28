@@ -17,7 +17,7 @@ public class ClientBookServlet extends BaseServlet {
     private BookService bookService = new BookServiceImpl();
 
     protected void page(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        System.out.println("Passed through the front end client program");
+        //System.out.println("Passed through the front end client program");
         //1. get request parameter - pageNO and pageSize
         int pageNO = WebUtils.parseInt(req.getParameter("pageNO"),1);
         int pageSize = WebUtils.parseInt(req.getParameter("pageSize"), Page.PAGE_SIZE);
